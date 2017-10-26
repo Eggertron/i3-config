@@ -157,7 +157,18 @@ bar {
 }
 
 # Sreen brightness controls, requires light build/installed
-bindsym XF86MonBrightnessUp exec light -A 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
 #bindsym XF86MonBrightnessUp exec backlight.sh 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec backlight.sh -20 # decrease screen brightness
+
+# Volume Controls, requires amixer and pulse audio
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%-
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Media player ndsym XF86AudioPlay exec playerctl play
+# bindsym XF86AudioPause exec playerctl pause
+# bindsym XF86AudioNext exec playerctl next
+# bindsym XF86AudioPrev exec playerctl previouscontrols
+
